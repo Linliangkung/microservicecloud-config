@@ -10,12 +10,4 @@ eureka:
     fetch-registry: false #标示自己就是注册中心，职责是维护服务实例，不需要去检索服务
     service-url:
       defaultZone : http://localhost:7002/eureka,http://localhost:7003/eureka #eureka查询注册地址
-#  server:
-#    enable-self-preservation: false
-#    eviction-interval-timer-in-ms: 30000
-
----
-spring:
-  profiles: dev
-  heihei: hei
 
