@@ -38,14 +38,14 @@ endpoints:
   shutdown:
     enabled: true
 
-----
+---
 #ÅäÖÃ¿ª·¢¶Ë¿ÚºÅ
 spring:
   profiles: dev
 server:
   port: 8001
 
-----
+---
 #ÅäÖÃ²âÊÔ¶Ë¿ÚºÅ
 spring:
   profiles: test
