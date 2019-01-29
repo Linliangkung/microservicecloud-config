@@ -1,6 +1,6 @@
 #配置端口号
 server:
-  port: 8001
+  port: 8002
 
 #配置mybatis
 mybatis:
