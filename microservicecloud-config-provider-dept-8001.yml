@@ -2,7 +2,6 @@
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
   type-aliases-package: com.jsako.springcloud.entities
-
 #配置spring相关
 spring:
   application:
@@ -13,7 +12,6 @@ spring:
     url: jdbc:mysql://localhost:3306/springcloud
     username: root
     password: SSYVcal262
-
 #配置注册中心
 eureka:
   client:
@@ -22,31 +20,24 @@ eureka:
   instance:
     instance-id: microservicecloud-dept8001
     prefer-ip-address: true
-
 #配置微服务描述信息
 info:
   app.name: microservicecloud
   company.name: jsako
   build.artifactId: $jsako.id$
   build.version: $jsako.version$
-
-
 management:
   security:
     enabled: false
 endpoints:
   shutdown:
     enabled: true
-
 ---
-#配置开发端口号
 spring:
   profiles: dev
 server:
   port: 8001
-
 ---
-#配置测试端口号
 spring:
   profiles: test
 server:
