@@ -1,7 +1,7 @@
 spring:
   name: springcloud-config
- test:
-   hee: zzz
+test:
+  hee: zzz
 ---
 spring:
   profiles: dev
