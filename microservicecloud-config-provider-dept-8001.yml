@@ -32,13 +32,3 @@ management:
 endpoints:
   shutdown:
     enabled: true
----
-spring:
-  profiles: dev
-server:
-  port: 8001
----
-spring:
-  profiles: test
-server:
-  port: 8002
