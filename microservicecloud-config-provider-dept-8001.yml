@@ -1,13 +1,56 @@
+#配置端口号
 server:
-  port: 7001
+  port: 8001
 
+#配置mybatis
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.jsako.springcloud.entities
 
+#配置spring相关
+spring:
+  application:
+    name: microservicecloud-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/springcloud
+    username: root
+    password: SSYVcal262
+
+#配置注册中心
 eureka:
-  instance:
-    hostname: eureka7001 #eureka服务端实例的名称
   client:
-    register-with-eureka: false  #false标示不向注册中心注册自己
-    fetch-registry: false #标示自己就是注册中心，职责是维护服务实例，不需要去检索服务
     service-url:
-      defaultZone : http://localhost:7002/eureka,http://localhost:7003/eureka #eureka查询注册地址
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka,http://localhost:7003/eureka #Eureka Server查询注册地址
+  instance:
+    instance-id: microservicecloud-dept8001
+    prefer-ip-address: true
+#    lease-renewal-interval-in-seconds: 10
+#    lease-expiration-duration-in-seconds: 5
 
+#配置微服务描述信息
+info:
+  app.name: microservicecloud
+  company.name: jsako
+  build.artifactId: $jsako.id$
+  build.version: $jsako.version$
+
+
+management:
+  security:
+    enabled: false
+endpoints:
+  shutdown:
+    enabled: true
+
+---
+spring:
+  profiles: dev
+server:
+  port: 8001
+---
+spring:
+  profiles: test
+server:
+  port: 8002
