@@ -14,3 +14,8 @@ eureka:
 #    enable-self-preservation: false
 #    eviction-interval-timer-in-ms: 30000
 
+---
+spring:
+  profiles: dev
+  heihei: hei
+
